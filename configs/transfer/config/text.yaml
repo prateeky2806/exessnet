@@ -1,0 +1,45 @@
+# Dataset setup
+text_exp: True
+set: TextCLDataset
+data: ./data/text/
+num_tasks: 5
+workers: 4
+# text_tasks: []
+
+# Model setup
+model: TextCLModel
+conv_type: MultitaskMaskConv1d
+conv_init: signed_constant
+bn_type: MultitaskNonAffineBN1D
+er_sparsity: normal
+sparsity: 0.1
+
+# Forks
+cnn_model: cnnstatic
+emb_model: bert-base-uncased
+weight_epochs: 0
+weight_mask_type: original
+ewc_lamda: 0
+
+# Trainer
+batch_size: 8
+test_batch_size: 8
+epochs: 1
+resume: False
+save: True
+multigpu: [0]
+log_interval: 10
+
+# Optimizer setup
+mask_opt: adam
+weight_opt: adam
+lr: 0.001  # [0.001, 0.0001/0.01] for supsup,
+train_weight_lr: 0.001 # [0.0001, 0.001] for w_org, [0.01, 0.001] for w_exc
+momentum: 0.9
+wd: 0.0001
+
+# Adaptation setup
+adaptor: gt
+adapt: True
+eval_ckpts: []
+eval_all: True

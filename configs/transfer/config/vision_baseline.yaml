@@ -1,0 +1,40 @@
+# Dataset setup
+text_exp: False
+data: ./data/
+set: RandSplitCIFAR100
+num_tasks: 5
+
+# Model setup
+model: GEMResNet18
+conv_type: StandardConv
+bn_type: StandardBN
+conv_init: signed_constant
+num_classes: 5
+er_sparsity: normal
+sparsity: 0.1
+
+# Forks
+epochs: 0
+weight_epochs: 100
+weight_mask_type: original
+ewc_lamda: 0
+
+# Trainer
+batch_size: 64
+test_batch_size: 64
+save: True
+multigpu: [0]
+log_interval: 10
+
+# Optimizer setup
+weight_opt: adam
+lr: 0.1
+train_weight_lr: 0.1
+momentum: 0.9
+wd: 0.0001
+
+# Adaptation setup
+adaptor: gt
+adapt: True
+base_type: multitask
+

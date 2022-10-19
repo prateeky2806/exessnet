@@ -1,0 +1,28 @@
+# Dataset setup
+text_exp: False
+data: ./data/
+set: RandSplitCIFAR100
+num_tasks: 
+
+# Model setup
+conv_init: signed_constant
+
+# Forks
+epochs: 100
+
+# Trainer
+batch_size: 64
+test_batch_size: 64
+save: True
+multigpu: [0]
+log_interval: 10
+
+# Optimizer setup
+lr: 0.1
+momentum: 0.9
+wd: 0.0001
+
+# Adaptation setup
+adaptor: gt
+adapt: True
+

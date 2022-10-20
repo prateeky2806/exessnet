@@ -1,3 +1,9 @@
+## PyTorch code for ExSSNeT
+
+[Exclusive Supermask Subnetwork Training for Continual Learning](https://arxiv.org/abs/2210.10209)
+
+[Prateek Yadav](https://prateek-yadav.github.io/), and [Mohit Bansal](https://www.cs.unc.edu/~mbansal/)
+
 ### Folder structure:
 - data: This folder contains the final preprocessed data for the natural language domain for vision domain the datasets are downloaded automatically. This folder also contains the dataloading script.
 - models: This folder contains the models including ResNet18, ResNet50, LetNeT, StaticCNN, etc. 
@@ -28,3 +34,18 @@ For language datasets --text-tasks can be any subset of [ag,yelp,amazon,yahoo,db
 
 4. Running SSNeT for language dataset.
    - python main_text.py --config=configs/transfer/config/text.yaml --server-home=Add_path_your_home_directory --log-dir=runs/debug --name=test --epochs=2 --weight-epochs=2 --emb-model=bert-base-uncased --lr=0.001 --train-weight-lr=0.001 --text-tasks=ag,yelp,amazon,yahoo,dbpedia
+
+
+### Citation
+```
+
+@inproceedings{yadav2020exssnet,
+  doi = {10.48550/ARXIV.2210.10209},
+  url = {https://arxiv.org/abs/2210.10209},
+  author = {Yadav, Prateek and Bansal, Mohit},
+  title = {Exclusive Supermask Subnetwork Training for Continual Learning},
+  publisher = {arXiv},
+  year = {2022},
+  copyright = {arXiv.org perpetual, non-exclusive license}
+}
+```
